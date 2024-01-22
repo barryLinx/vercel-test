@@ -23,10 +23,10 @@ async function routes (fastify, options) {
     reply.header("Access-Control-Allow-Origin",'*').
     reply.header('Content-Type', 'text/html');
     reply.header('Cache-Control', 's-max-age=1, stale-while-revalidate');
-    reply.send({ hello: 'world' });
+    return  reply.send({ hello: 'world' });
   });
   fastify.get('/api/test', async (request, reply) => {
-    reply.send({ vercel: 'Vercel test' }); 
+    return  reply.send({ vercel: 'Vercel test' }); 
   });
 
 }
