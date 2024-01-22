@@ -8,6 +8,13 @@
 // import cors from "@fastify/cors";
 
 
+// fastify.get('/api', async (request, reply) => {
+//   return { hello: 'world' }
+// });
+// fastify.get('/api/test', async (request, reply) => {
+//   return { vercel: 'Vercel test' }
+// });
+
 async function routes (fastify, options) {
 //   await fastify.register(cors, {
 //   // put your options here
