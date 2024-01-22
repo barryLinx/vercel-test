@@ -6,10 +6,10 @@
 
 // Declare a route
 async function routes (fastify, options) {
-  fastify.get('/', async (request, reply) => {
+  fastify.get('api/', async (request, reply) => {
     return { hello: 'world' }
   });
-  fastify.get('/test', async (request, reply) => {
+  fastify.get('api/test', async (request, reply) => {
     return { vercel: 'Vercel test' }
   });
 
