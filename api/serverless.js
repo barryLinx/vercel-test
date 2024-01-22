@@ -17,7 +17,7 @@ await app.register(cors, {
   // put your options here
   //origin:[cors_Orgin]
   // origin:'http://localhost:8050/'
-  origin: "http://127.0.0.1:5500",
+  origin: ["http://127.0.0.1:5500/","http://localhost:8050/"]
 });
 
 // /* rate-limit 流量限制*/
