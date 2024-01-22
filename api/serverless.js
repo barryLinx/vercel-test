@@ -7,14 +7,14 @@ dotenv.config();
 // Require the framework
 import Fastify from "fastify";
 //import cors from "@fastify/cors";
-import allowCors from '../src/cors.js'
+
 
 // Instantiate Fastify with some config
 const app = Fastify({
   logger: true,
 });
 
-await app.register(allowCors);
+
 
 // await app.register(cors, {
 //   // put your options here

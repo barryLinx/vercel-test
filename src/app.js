@@ -15,7 +15,7 @@
 //   return { vercel: "Vercel test" };
 // });
 
-
+import allowCors from '../src/cors.js'
 
 async function routes (fastify, options) {
 //   await fastify.register(cors, {
@@ -25,10 +25,10 @@ async function routes (fastify, options) {
 //   origin: ['http://127.0.0.1:5500','http://localhost:8050/'],
 //   methods: ["GET"],
 // });
-  fastify.get('/api', async (request, reply) => {
+  fastify.get('/api',allowCors, async (request, reply) => {
     return { hello: 'world' }
   });
-  fastify.get('/api/test', async (request, reply) => {
+  fastify.get('/api/test',allowCors, async (request, reply) => {
     return { vercel: 'Vercel test' }
   });
 
