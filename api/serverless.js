@@ -6,19 +6,22 @@ dotenv.config();
 
 // Require the framework
 import Fastify from "fastify";
-import cors from "@fastify/cors";
+//import cors from "@fastify/cors";
+import allowCors from '../src/cors.js'
 
 // Instantiate Fastify with some config
 const app = Fastify({
   logger: true,
 });
 
-await app.register(cors, {
-  // put your options here
-  //origin:[cors_Orgin]
-  // origin:'http://localhost:8050/'
-  origin: ["http://127.0.0.1:5500/","http://localhost:8050/"]
-});
+await app.register(allowCors);
+
+// await app.register(cors, {
+//   // put your options here
+//   //origin:[cors_Orgin]
+//   // origin:'http://localhost:8050/'
+//   origin: ["http://127.0.0.1:5500/","http://localhost:8050/"]
+// });
 
 // /* rate-limit 流量限制*/
 // await app.register(import("@fastify/rate-limit"), {
