@@ -7,7 +7,7 @@
 // Declare a route
 import cors from "@fastify/cors";
 async function routes (fastify, options) {
-  await app.register(cors, {
+  await fastify.register(cors, {
   // put your options here
   //origin:[cors_Orgin]
   // origin:'http://localhost:8050/'
