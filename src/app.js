@@ -20,13 +20,18 @@
 async function routes (fastify, options) {
 
   fastify.get('/api', async (request, reply) => {
-    reply.header("Access-Control-Allow-Origin",'*').
-    reply.header('Content-Type', 'text/html');
-    reply.header('Cache-Control', 's-max-age=1, stale-while-revalidate');
-    return  reply.send({ hello: 'world' });
+    reply.code(200)
+    header("Access-Control-Allow-Origin", "*")
+   .header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+   .header("Content-Type", "application/json; charset=utf-8")
+   .send({ vercel: "Vercel test" })
   });
   fastify.get('/api/test', async (request, reply) => {
-    return  reply.send({ vercel: 'Vercel test' }); 
+    reply.code(200)
+    header("Access-Control-Allow-Origin", "*")
+   .header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+   .header("Content-Type", "application/json; charset=utf-8")
+   .send({test:'good test'})
   });
 
 }
