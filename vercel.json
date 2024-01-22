@@ -1,21 +1,13 @@
 {
-  "headers": [
-    {
-      "source": "/api/serverless.js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        },
-        {
-          "key": "Access-Control-Allow-Origin", 
-          "value": ["http://127.0.0.1:5500','http://localhost:8050/"]
-        },
-        {
-          "key": "Access-Control-Allow-Methods", 
-          "value": "GET" 
-        }
-      ]
-    }
+  "version": 2,
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "./api/serverless.js",
+          "methods":["GET"],
+          "headers":{
+              "Access-Control-Allow-Origin":"*"
+          }
+      }
   ]
 }
