@@ -20,13 +20,13 @@
 async function routes (fastify, options) {
 
   fastify.get('/api', async (request, reply) => {
-    reply.header("Access-Control-Allow-Origin",["http://127.0.0.1:5500/","http://localhost:8050/"])
+    reply.header("Access-Control-Allow-Origin",'*').
     reply.header('Content-Type', 'text/html');
     reply.header('Cache-Control', 's-max-age=1, stale-while-revalidate');
-    return { hello: 'world' }
+    reply.send({ hello: 'world' });
   });
   fastify.get('/api/test', async (request, reply) => {
-    return { vercel: 'Vercel test' }
+    reply.send({ vercel: 'Vercel test' }); 
   });
 
 }
