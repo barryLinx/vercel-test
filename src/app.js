@@ -5,12 +5,17 @@
 // })
 
 // Declare a route
-export default async function routes(fastify,options){
-  fastify.get('/test', async function handler (request, reply) {
+async function routes (fastify, options) {
+  fastify.get('/', async (request, reply) => {
     return { hello: 'world' }
-  })
+  });
+  fastify.get('/test', async (request, reply) => {
+    return { vercel: 'Vercel test' }
+  });
 
 }
+
+export default routes;
 
 
 
