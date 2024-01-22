@@ -15,17 +15,14 @@
 //   return { vercel: "Vercel test" };
 // });
 
-import cors from "@fastify/cors";
+
 
 async function routes (fastify, options) {
-  await fastify.register(cors, {
-  // put your options here
-  //origin:[cors_Orgin]
-  // origin:'http://localhost:8050/'
-  origin: ['http://127.0.0.1:5500','http://localhost:8050/'],
-  methods: ["GET"],
-});
+
   fastify.get('/api', async (request, reply) => {
+    reply.setHeader("Access-Control-Allow-Origin",["http://127.0.0.1:5500/","http://localhost:8050/"])
+    reply.setHeader('Content-Type', 'text/html');
+    reply.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
     return { hello: 'world' }
   });
   fastify.get('/api/test', async (request, reply) => {
