@@ -20,9 +20,9 @@
 async function routes (fastify, options) {
 
   fastify.get('/api', async (request, reply) => {
-    reply.setHeader("Access-Control-Allow-Origin",["http://127.0.0.1:5500/","http://localhost:8050/"])
-    reply.setHeader('Content-Type', 'text/html');
-    reply.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+    reply.header("Access-Control-Allow-Origin",["http://127.0.0.1:5500/","http://localhost:8050/"])
+    reply.header('Content-Type', 'text/html');
+    reply.header('Cache-Control', 's-max-age=1, stale-while-revalidate');
     return { hello: 'world' }
   });
   fastify.get('/api/test', async (request, reply) => {
